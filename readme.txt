@@ -1,3 +1,5 @@
+//
+
 #include "pch.h"
 
 #include <fstream>
@@ -17,12 +19,13 @@ int main(void)
 	map<string, int> words;  //转int类型
 	ifstream fin("input.txt");//要统计的文件
 	ofstream fout("output.txt");//结果存放在output中
-               //------------
+			   //------------
 	string str;
 	int wordCount = 0;
 	string d;
 	int charCount = 0;
-                //------------
+	//------------
+
 	if (!fin || !fout)
 	{
 
@@ -31,7 +34,7 @@ int main(void)
 	while (fin.good())
 	{
 		fin >> str;
-		words[str]++; 
+		words[str]++;
 	}
 	fin.close();
 	fin.open("input.txt");
@@ -47,8 +50,8 @@ int main(void)
 			++wordCount;
 		}
 	}
-	fout << "wordTotal: " << wordCount << endl;
-	fout << "charTotal: " << charCount << endl;
+	fout << "wordTotal: " << wordCount << endl;  // 文件输出单词个数
+	fout << "charTotal: " << charCount << endl;   //文件输出字符个数
 	fout.close();
 	return 0;
 }

@@ -14,14 +14,15 @@ bool isdigit(char ch)
 
 int main(void)
 {
-	map<string, int> words;
+	map<string, int> words;  //转int类型
 	ifstream fin("input.txt");//要统计的文件
 	ofstream fout("output.txt");//结果存放在output中
+               //------------
 	string str;
 	int wordCount = 0;
 	string d;
 	int charCount = 0;
-
+                //------------
 	if (!fin || !fout)
 	{
 
@@ -30,7 +31,7 @@ int main(void)
 	while (fin.good())
 	{
 		fin >> str;
-		words[str]++;
+		words[str]++; 
 	}
 	fin.close();
 	fin.open("input.txt");
